@@ -4,7 +4,7 @@ int n;
 int cc;
 int nn;
 int posc;
-boolean CoN;
+boolean CoN = false;
 Carta c1;
 Carta c2;
 Carta[] cp;
@@ -54,16 +54,19 @@ void draw() {
     Carta j = cartas.get(i);
     posc = i*100;
     j.display(posc, 0);
-  }
-  
- // cartas[0]
-  
-  
+  }  
 }
 void mousePressed() {
-//for(){
-   if (mouseX >= cartas.get(0).x1 && mouseX<= cartas.get(0).x1+100 && mouseY >= cartas.get(0).y1 && mouseY <= cartas.get(0).y1+100 && cartas.get) {
-    println(posc);
+for(int i = 0; i <= 7; i++){
+  if(cartas.get(i).colorito == cc|| cartas.get(i).numero == nn){
+  CoN = true;
+  }
+  else{
+  CoN = false;
+  }
+   if (mouseX >= cartas.get(i).x1 && mouseX<= cartas.get(i).x1+100 && mouseY >= cartas.get(i).y1 && mouseY <= cartas.get(i).y1+100 && CoN == true) {
+   nn = cartas.get(i).colorito;
+   cc = cartas.get(i).numero;
   }
 }
-//}
+}
