@@ -33,6 +33,9 @@ void setup() {
   }  
   nn = int(random(0, 10));
   cc = int(random(0, 4));
+  
+}
+void draw() {
   String  ss ="";
   if (cc == 0) {
     ss = "azul";
@@ -48,8 +51,6 @@ void setup() {
   }
   c2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
   cartas.add(c2);
-}
-void draw() {
   for (int i=0; i < cartas.size(); i++) {
     Carta j = cartas.get(i);
     posc = i*100;
