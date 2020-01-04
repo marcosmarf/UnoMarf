@@ -7,7 +7,6 @@ int posc;
 String ss;
 boolean CoN = false;
 Carta c1;
-Carta c2;
 Carta[] cp;
 void setup() {
   size(700, 700);
@@ -47,8 +46,11 @@ void setup() {
   if (cc == 3) {
     ss = "amarillo";
   }
-  c2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
-  cartas.add(c2);
+  
+PImage foto = loadImage(ss=ss+nn+".png");
+image(foto,width/2-50,height/2-50,100,100);
+
+
 }
 void draw() {
 
@@ -61,15 +63,17 @@ void draw() {
   }
 }
 void mousePressed() {
-  for (int i = 0; i <= 7; i++) {
+  for (int i = 0; i <= 6; i++) {
     if (cartas.get(i).colorito == cc|| cartas.get(i).numero == nn) {
       CoN = true;
     } else {
       CoN = false;
     }
     if (mouseX >= cartas.get(i).x1 && mouseX<= cartas.get(i).x1+100 && mouseY >= cartas.get(i).y1 && mouseY <= cartas.get(i).y1+100 && CoN == true) {
-      nn = cartas.get(i).colorito;
-      cc = cartas.get(i).numero;
+      println(0);
+ //     nn = cartas.get(i).colorito;
+ //     cc = cartas.get(i).numero;
+    
+    }
     }
   }
-}
