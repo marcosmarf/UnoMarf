@@ -34,12 +34,9 @@ void setup() {
       s = "amarillo";
     }
 
-    c1 = new Carta (c, n, loadImage(s=s+n+".png"), true);
+    c1 = new Carta (c, n, loadImage(s=s+n+".png"));
     cartas.add(c1);
   } 
-  for (int i = 0; i < 4; i++) {
-    cc ++;
-    for (int o = 0; o < 10; o++) {
       nn ++;
       ss ="";
       if (cc == 0) {
@@ -54,10 +51,9 @@ void setup() {
       if (cc == 3) {
         ss = "amarillo";
       }
-      c2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"), false);
-      cartas.add(c2);
-    }
-  }
+      c2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
+
+
 }
 void draw() {
 
@@ -68,6 +64,8 @@ void draw() {
     posc = width/no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga*i;
     j.display(posc, 0);
   }
+   
+  image(c2.foto,width/2-50,height/2-50,100,100);
 }
 void mousePressed() {
   for (int i = 0; i < 7; i++) {
@@ -78,9 +76,10 @@ void mousePressed() {
     }
     if (mouseX >= cartas.get(i).x1 && mouseX<= cartas.get(i).x1+100 && mouseY >= cartas.get(i).y1 && mouseY <= cartas.get(i).y1+100 && CoN == true) {
       println(0);
-      nn = cartas.get(i).colorito;
-      cc = cartas.get(i).numero;
-      c2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"), false);
+      
+     // c2 = new Carta (());
+      
+     
     } else {
       println(1);
     }
