@@ -19,6 +19,7 @@ class Carta {
     if(mano == true){
     image(foto, x, y, 100, 100);
     }else{
+      
     image(foto,width/2-50,height/2-50,100,100);
     }
   }
