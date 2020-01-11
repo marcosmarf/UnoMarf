@@ -10,6 +10,7 @@ int posc;
 int no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga;
 String ss;
 boolean CoN = false;
+PImage robar;
 Carta c1;
 Carta c2;
 void setup() {
@@ -19,7 +20,7 @@ void setup() {
     n = int(random(0, 10));
     c = int(random(0, 4));
     no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga = 6 +1;
-
+    
     String  s ="";
     if (c == 0) {
       s = "azul";
@@ -36,7 +37,8 @@ void setup() {
 
     c1 = new Carta (c, n, loadImage(s=s+n+".png"));
     cartas.add(c1);
-  } 
+  }
+  cartas.remove(2);
       nn ++;
       ss ="";
       if (cc == 0) {
@@ -52,13 +54,11 @@ void setup() {
         ss = "amarillo";
       }
       c2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
-
+      this.robar = loadImage("robar.png");
 
 }
 void draw() {
-
-
-
+image(robar,650,100,50,50);
   for (int i=0; i < cartas.size(); i++) {
     Carta j = cartas.get(i);
     posc = width/no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga*i;
@@ -68,7 +68,32 @@ void draw() {
   image(c2.foto,width/2-50,height/2-50,100,100);
 }
 void mousePressed() {
+  for(int h =  0  ;   h  <cartas.size()   ;h++)
+  if(mouseX>=650 && mouseX<=700 && mouseY>=100 && mouseY<=150 && h  <  7){
+  cartas.get(2).colorito=c=int(random(0,4));
+    cartas.get(2).numero=n=int(random(0, 10));
+ String  s ="";
+    if (c == 0) {
+      s = "azul";
+    }
+    if (c == 1) {
+      s = "rojo";
+    }
+    if (c == 2) {
+      s = "verde";
+    }
+    if (c == 3) {
+      s = "amarillo";
+    }
+        c1 = new Carta (c, n, loadImage(s=s+n+".png"));
+    cartas.add(c1);
+  }
+
   for (int i = 0; i < 7; i++) {
+    /*
+    if(cartas.get){
+    }
+    */
     if (cartas.get(i).colorito == cc|| cartas.get(i).numero == nn) {
       CoN = true;
     } else {
