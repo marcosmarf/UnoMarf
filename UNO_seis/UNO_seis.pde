@@ -7,7 +7,7 @@ int n;
 int cc;
 int nn;
 int posc;
-int ordenar_cartas;
+int no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga;
 String ss;
 boolean CoN = false;
 Carta c1;
@@ -18,7 +18,7 @@ void setup() {
   for (int i = 0; i < 7; i++) {
     n = int(random(0, 10));
     c = int(random(0, 4));
-    ordenar_cartas = 6 +1;
+    no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga = 6 +1;
 
     String  s ="";
     if (c == 0) {
@@ -37,8 +37,6 @@ void setup() {
     c1 = new Carta (c, n, loadImage(s=s+n+".png"));
     cartas.add(c1);
   } 
-  
-
       nn ++;
       ss ="";
       if (cc == 0) {
@@ -63,7 +61,7 @@ void draw() {
 
   for (int i=0; i < cartas.size(); i++) {
     Carta j = cartas.get(i);
-    posc = width/ordenar_cartas*i;
+    posc = width/no_se_que_nmbre_ponerle_a_esta_bariable_asi_que_le_pongo_este_nombre_tan_largo_y_no_se_si_hay_faltas_de_ortografia_pero_no_me_importa_mucho_porque_estoy_poniendo_tantas_esplicaciones_solo_para_alargar_el_nombre_de_esta_bariable_tan_larga*i;
     j.display(posc, 0);
   }
    
@@ -78,25 +76,8 @@ void mousePressed() {
     }
     if (mouseX >= cartas.get(i).x1 && mouseX<= cartas.get(i).x1+100 && mouseY >= cartas.get(i).y1 && mouseY <= cartas.get(i).y1+100 && CoN == true) {
       println(0);
-       cartas.remove(i);
-       ordenar_cartas --;
-       int cart_c = cartas.get(i).colorito;
-       int cart_n = cartas.get(i).numero;
-       String cart_s = "";
-       if (cartas.get(i).colorito == 0) {
-        cart_s = "azul";
-      }
-      if (cartas.get(i).colorito == 1) {
-        cart_s = "rojo";
-      }
-      if (cartas.get(i).colorito == 2) {
-        cart_s = "verde";
-      }
-      if (cartas.get(i).colorito == 3) {
-        cart_s = "amarillo";
-      }
-       
-       c2 = new Carta (cart_c,cart_n, loadImage(cart_s=cart_s+cart_n+".png"));
+      
+     // c2 = new Carta (());
       
      
     } else {
