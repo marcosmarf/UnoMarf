@@ -11,7 +11,7 @@ class Carta {
     this.colorito = colorito;
     this.numero = numero;
     this.foto = foto;
-
+   
   }
   void display(int x, int y) {
     this.x1 = x;
