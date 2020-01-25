@@ -3,6 +3,8 @@ int instc = 0;
 int instn = 0;
 int c;
 int n;
+int CE;
+int NE;
 int c1;
 int n1;
 int cc;
@@ -14,6 +16,7 @@ String ss;
 boolean CoN = false;
 Carta C1;
 Carta C2;
+Carta SC;
 void setup() {
   size(700, 700);
   for (int i = 0; i < cuancard; i++) {
@@ -37,6 +40,20 @@ void setup() {
     C1 = new Carta (c, n, loadImage(s=s+n+".png"));
     cartas.add(C1);
   }
+    String a ="";
+    if (CE == 0){
+      a = "azul";
+    }
+    if (c == 1) {
+      a = "rojo";
+    }
+    if (c == 2) {
+      a = "verde";
+    }
+    if (c == 3) {
+      a = "amarillo";
+    }
+    
   nn = int(random(0, 10));
   cc = int(random(0, 4));
   ss ="";
@@ -139,5 +156,7 @@ void mousePressed() {
   if (mouseX >= 0 && mouseX <= 100 && mouseY >= 100 && mouseY <= 200) {
     val++;
     addCarta();
+    
+    
   }
 }
