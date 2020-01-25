@@ -3,8 +3,8 @@ int instc = 0;
 int instn = 0;
 int c;
 int n;
-int CE;
-int NE;
+int SC;
+int SN;
 int c1;
 int n1;
 int cc;
@@ -16,13 +16,51 @@ String ss;
 boolean CoN = false;
 Carta C1;
 Carta C2;
-Carta SC;
 void setup() {
   size(700, 700);
   for (int i = 0; i < cuancard; i++) {
-    n = int(random(0, 10));
+    n = int(random(0, 13));
     c = int(random(0, 4));
-
+    String  ss ="";
+    if (n == 0) {
+      ss = "0";
+    }
+    if (n == 1) {
+      ss = "1";
+    }
+    if (n == 2) {
+      ss = "2";
+    }
+    if (n == 3) {
+      ss = "3";
+    }
+    if (n == 4) {
+      ss = "4";
+    }
+    if (n == 5) {
+      ss = "5";
+    }
+    if (n == 6) {
+      ss = "6";
+    }
+    if (n == 7) {
+      ss = "7";
+    }
+    if (n==8){
+    ss="8";
+    }
+    if (n==9){
+    ss="9";
+    }
+    if(n==10){
+    ss="2p";
+    }
+    if(n==11){
+    ss="bloq";
+    }
+   if(n==12){
+   ss="cambio";  
+   }
     String  s ="";
     if (c == 0) {
       s = "azul";
@@ -37,75 +75,193 @@ void setup() {
       s = "amarillo";
     }
 
-    C1 = new Carta (c, n, loadImage(s=s+n+".png"));
+    C1 = new Carta (c, n, loadImage(s=s+ss+".png"));
     cartas.add(C1);
-  }
-    String a ="";
-    if (CE == 0){
-      a = "azul";
-    }
-    if (c == 1) {
-      a = "rojo";
-    }
-    if (c == 2) {
-      a = "verde";
-    }
-    if (c == 3) {
-      a = "amarillo";
-    }
     
-  nn = int(random(0, 10));
-  cc = int(random(0, 4));
-  ss ="";
+    
+     nn = int(random(0, 11));
+    cc = int(random(0, 4));
+    
+    String  ss3 ="";
+    if (nn == 0) {
+      ss3 = "0";
+    }
+    if (nn == 1) {
+      ss3 = "1";
+    }
+    if (nn == 2) {
+      ss3 = "2";
+    }
+    if (nn== 3) {
+      ss3 = "3";
+    }
+    if (nn == 4) {
+      ss3 = "4";
+    }
+    if (nn == 5) {
+      ss3 = "5";
+    }
+    if (nn == 6) {
+      ss3 = "6";
+    }
+    if (nn == 7) {
+      ss3 = "7";
+    }
+    if (nn == 8){
+    ss3 = "8";
+    }
+    if (nn == 9){
+    ss3="9";
+    }
+    if(nn == 10){
+    ss3="2p";
+    }
+        if(nn==11){
+    ss3="bloq";
+    }
+   if(nn==12){
+   ss3="cambio";  
+   }
+
+    String  ss2 ="";
+    if (cc == 0) {
+      ss2 = "azul";
+    }
+    if (cc == 1) {
+      ss2 = "rojo";
+    }
+    if (cc == 2) {
+      ss2 = "verde";
+    }
+    if (cc == 3) {
+      ss2 = "amarillo";
+    }
+
+    C2 = new Carta (cc, nn, loadImage(ss2=ss2+ss3+".png"));
+    cartas.add(C2);
+    
+  
+  }
+}
+    
+void remplazarcarta(int cc, int nn) {
+  String ss3 ="";
+   if (nn == 0) {
+    ss3 = "0";
+  }
+  if (nn == 1) {
+    ss3 = "1";
+  }
+  if (nn == 2) {
+    ss3 = "2";
+  }
+  if (nn == 3) {
+    ss3 = "3";
+  }
+  if (nn == 4){
+  ss3 = "4";
+  }
+  if (nn == 5) {
+    ss3 = "5";
+  }
+  if (nn == 6) {
+    ss3 = "6";
+  }
+  if (nn == 7) {
+    ss3 = "7";
+  }
+  if (nn == 8) {
+    ss3 = "8";
+  }
+  if (nn == 9){
+  ss3 = "9";
+  }
+  if (nn == 10){
+  ss3 = "2p";
+  }
+      if(nn==11){
+    ss3="bloq";
+    }
+   if(nn==12){
+   ss3="cambio";  
+   }
+  
+  String ss2 = "";
   if (cc == 0) {
-    ss = "azul";
+    ss2 = "azul";
   }
   if (cc == 1) {
-    ss = "rojo";
+    ss2 = "rojo";
   }
   if (cc == 2) {
-    ss = "verde";
+    ss2 = "verde";
   }
   if (cc == 3) {
-    ss = "amarillo";
+    ss2 = "amarillo";
   }
-  C2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
-}
-void remplazarcarta(int cc1, int nn1) {
-  String ss1 ="";
-  if (cc1 == 0) {
-    ss1 = "azul";
-  }
-  if (cc1 == 1) {
-    ss1 = "rojo";
-  }
-  if (cc1 == 2) {
-    ss1 = "verde";
-  }
-  if (cc1 == 3) {
-    ss1 = "amarillo";
-  }
-  C2 = new Carta (cc1, nn1, loadImage(ss1=ss1+nn1+".png"));
+  C2 = new Carta (cc, nn, loadImage(ss2=ss2+ss3+".png"));
+  cartas.add(C2);
 }
 void addCarta() {
-  n1 = int(random(0, 10));
+  n1 = int(random(0, 13));
   c1 = int(random(0, 4));
-
-  String  s1 ="";
+      String sb= "";
+      
+      if(n1==0){
+      sb = "0";
+    }
+    if (n1 == 1) {
+      sb = "1";
+    }
+    if (n1 == 2) {
+      sb = "2";
+    }
+    if (n1== 3) {
+      sb = "3";
+    }
+    if (n1 == 4) {
+      sb = "4";
+    }
+    if (n1 == 5) {
+      sb = "5";
+    }
+    if (n1 == 6) {
+      sb = "6";
+    }
+    if (n1 == 7) {
+      sb = "7";
+    }
+    if (n1 == 8){
+    sb = "8";
+    }
+    if (n1 == 9){
+    sb="9";
+    }
+    if(n1 == 10){
+    sb="2p";
+    }
+        if(n1==11){
+    sb="bloq";
+    }
+   if(n1==12){
+   sb="cambio";  
+   }
+    
+  String  sa ="";
   if (c1 == 0) {
-    s1 = "azul";
+    sa = "azul";
   }
   if (c1 == 1) {
-    s1 = "rojo";
+    sa = "rojo";
   }
   if (c1 == 2) {
-    s1 = "verde";
+    sa = "verde";
   }
   if (c1 == 3) {
-    s1 = "amarillo";
+    sa = "amarillo";
   }
 
-  C1 = new Carta (c1, n1, loadImage(s1=s1+n1+".png"));
+  C1 = new Carta (c1, n1, loadImage(sa=sa+sb+".png"));
   cartas.add(C1);
 }
 

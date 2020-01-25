@@ -6,10 +6,9 @@ class SCards {
   int y1;
   String s; 
 
-  SCards(int SColor, int SNum, PImage fotico) {
+  SCards(int SColor, PImage fotico) {
 
     this.SColor = SColor;
-    this.SNum = SNum;
     this.fotico = fotico;
    
   }
