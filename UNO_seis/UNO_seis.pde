@@ -1,4 +1,5 @@
 ArrayList<Carta> cartas = new ArrayList<Carta>();
+ArrayList <mazo> cartas1 = new ArrayList <mazo>();
 int instc = 0;
 int instn = 0;
 int c;
@@ -14,8 +15,31 @@ String ss;
 boolean CoN = false;
 Carta C1;
 Carta C2;
+mazo C3;
 void setup() {
   size(700, 700);
+  for (int i = 0; i < 4; i++) {
+    c = i;
+    for (int o = 0; o < 10; o++) {
+      n = o;
+      String  s ="";
+      if (c == 0) {
+        s = "azul";
+      }
+      if (c == 1) {
+        s = "rojo";
+      }
+      if (c == 2) {
+        s = "verde";
+      }
+      if (c == 3) {
+        s = "amarillo";
+      }
+
+      C3 = new mazo (c, n, loadImage(s=s+n+".png"));
+      cartas1.add(C3);
+    }
+  }
   for (int i = 0; i < cuancard; i++) {
     n = int(random(0, 10));
     c = int(random(0, 4));
@@ -37,22 +61,23 @@ void setup() {
     C1 = new Carta (c, n, loadImage(s=s+n+".png"));
     cartas.add(C1);
   }
-  nn = int(random(0, 10));
-  cc = int(random(0, 4));
-  ss ="";
-  if (cc == 0) {
-    ss = "azul";
-  }
-  if (cc == 1) {
-    ss = "rojo";
-  }
-  if (cc == 2) {
-    ss = "verde";
-  }
-  if (cc == 3) {
-    ss = "amarillo";
-  }
-  C2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
+}
+nn = int(random(0, 10));
+cc = int(random(0, 4));
+ss ="";
+if (cc == 0) {
+  ss = "azul";
+}
+if (cc == 1) {
+  ss = "rojo";
+}
+if (cc == 2) {
+  ss = "verde";
+}
+if (cc == 3) {
+  ss = "amarillo";
+}
+C2 = new Carta (cc, nn, loadImage(ss=ss+nn+".png"));
 }
 void remplazarcarta(int cc1, int nn1) {
   String ss1 ="";
@@ -91,11 +116,19 @@ void addCarta() {
   C1 = new Carta (c1, n1, loadImage(s1=s1+n1+".png"));
   cartas.add(C1);
 }
-
+void cmprobacion{
+for (int i = 0; i =< 4; i ++) {
+    for (int i = 0; i =< 10; i ++) {
+      
+      
+    }
+  }
+}
 void draw() {
   background(255);
   fill(255, 0, 0);
   rect(0, 100, 100, 100);
+  
   
   for (int i=0; i < cartas.size(); i++) {
     Carta j = cartas.get(i);
