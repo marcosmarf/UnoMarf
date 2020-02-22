@@ -21,46 +21,6 @@ void setup() {
   for (int i = 0; i < cuancard; i++) {
     n = int(random(0, 13));
     c = int(random(0, 4));
-    String  ss ="";
-    if (n == 0) {
-      ss = "0";
-    }
-    if (n == 1) {
-      ss = "1";
-    }
-    if (n == 2) {
-      ss = "2";
-    }
-    if (n == 3) {
-      ss = "3";
-    }
-    if (n == 4) {
-      ss = "4";
-    }
-    if (n == 5) {
-      ss = "5";
-    }
-    if (n == 6) {
-      ss = "6";
-    }
-    if (n == 7) {
-      ss = "7";
-    }
-    if (n==8){
-    ss="8";
-    }
-    if (n==9){
-    ss="9";
-    }
-    if(n==10){
-    ss="2p";
-    }
-    if(n==11){
-    ss="bloq";
-    }
-   if(n==12){
-   ss="cambio";  
-   }
     String  s ="";
     if (c == 0) {
       s = "azul";
@@ -75,53 +35,12 @@ void setup() {
       s = "amarillo";
     }
 
-    C1 = new Carta (c, n, loadImage(s=s+ss+".png"));
+    C1 = new Carta (c, n, loadImage(s=s+n+".png"));
     cartas.add(C1);
-    
-    
-     nn = int(random(0, 11));
+
+
+    nn = int(random(0, 11));
     cc = int(random(0, 4));
-    
-    String  ss3 ="";
-    if (nn == 0) {
-      ss3 = "0";
-    }
-    if (nn == 1) {
-      ss3 = "1";
-    }
-    if (nn == 2) {
-      ss3 = "2";
-    }
-    if (nn== 3) {
-      ss3 = "3";
-    }
-    if (nn == 4) {
-      ss3 = "4";
-    }
-    if (nn == 5) {
-      ss3 = "5";
-    }
-    if (nn == 6) {
-      ss3 = "6";
-    }
-    if (nn == 7) {
-      ss3 = "7";
-    }
-    if (nn == 8){
-    ss3 = "8";
-    }
-    if (nn == 9){
-    ss3="9";
-    }
-    if(nn == 10){
-    ss3="2p";
-    }
-        if(nn==11){
-    ss3="bloq";
-    }
-   if(nn==12){
-   ss3="cambio";  
-   }
 
     String  ss2 ="";
     if (cc == 0) {
@@ -137,55 +56,13 @@ void setup() {
       ss2 = "amarillo";
     }
 
-    C2 = new Carta (cc, nn, loadImage(ss2=ss2+ss3+".png"));
+    C2 = new Carta (cc, nn, loadImage(ss2=ss2+nn+".png"));
     cartas.add(C2);
-    
-  
   }
 }
-    
+
 void remplazarcarta(int cc, int nn) {
-  String ss3 ="";
-   if (nn == 0) {
-    ss3 = "0";
-  }
-  if (nn == 1) {
-    ss3 = "1";
-  }
-  if (nn == 2) {
-    ss3 = "2";
-  }
-  if (nn == 3) {
-    ss3 = "3";
-  }
-  if (nn == 4){
-  ss3 = "4";
-  }
-  if (nn == 5) {
-    ss3 = "5";
-  }
-  if (nn == 6) {
-    ss3 = "6";
-  }
-  if (nn == 7) {
-    ss3 = "7";
-  }
-  if (nn == 8) {
-    ss3 = "8";
-  }
-  if (nn == 9){
-  ss3 = "9";
-  }
-  if (nn == 10){
-  ss3 = "2p";
-  }
-      if(nn==11){
-    ss3="bloq";
-    }
-   if(nn==12){
-   ss3="cambio";  
-   }
-  
+
   String ss2 = "";
   if (cc == 0) {
     ss2 = "azul";
@@ -199,54 +76,12 @@ void remplazarcarta(int cc, int nn) {
   if (cc == 3) {
     ss2 = "amarillo";
   }
-  C2 = new Carta (cc, nn, loadImage(ss2=ss2+ss3+".png"));
+  C2 = new Carta (cc, nn, loadImage(ss2=ss2+nn+".png"));
   cartas.add(C2);
 }
 void addCarta() {
   n1 = int(random(0, 13));
   c1 = int(random(0, 4));
-      String sb= "";
-      
-      if(n1==0){
-      sb = "0";
-    }
-    if (n1 == 1) {
-      sb = "1";
-    }
-    if (n1 == 2) {
-      sb = "2";
-    }
-    if (n1== 3) {
-      sb = "3";
-    }
-    if (n1 == 4) {
-      sb = "4";
-    }
-    if (n1 == 5) {
-      sb = "5";
-    }
-    if (n1 == 6) {
-      sb = "6";
-    }
-    if (n1 == 7) {
-      sb = "7";
-    }
-    if (n1 == 8){
-    sb = "8";
-    }
-    if (n1 == 9){
-    sb="9";
-    }
-    if(n1 == 10){
-    sb="2p";
-    }
-        if(n1==11){
-    sb="bloq";
-    }
-   if(n1==12){
-   sb="cambio";  
-   }
-    
   String  sa ="";
   if (c1 == 0) {
     sa = "azul";
@@ -261,7 +96,7 @@ void addCarta() {
     sa = "amarillo";
   }
 
-  C1 = new Carta (c1, n1, loadImage(sa=sa+sb+".png"));
+  C1 = new Carta (c1, n1, loadImage(sa=sa+n1+".png"));
   cartas.add(C1);
 }
 
@@ -269,7 +104,7 @@ void draw() {
   background(255);
   fill(255, 0, 0);
   rect(0, 100, 100, 100);
-  
+
   for (int i=0; i < cartas.size(); i++) {
     Carta j = cartas.get(i);
     if (cuancard+val != 0) {
@@ -306,13 +141,17 @@ void mousePressed() {
       if (cc == 3) {
         ss = "amarillo";
       }
+      if (nn == 10) {
+        val++;
+        addCarta();
+        val++;
+        addCarta();
+      }
       val--;
     }
   }
   if (mouseX >= 0 && mouseX <= 100 && mouseY >= 100 && mouseY <= 200) {
     val++;
     addCarta();
-    
-    
   }
 }
